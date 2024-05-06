@@ -23,8 +23,5 @@ public class RegisterAdminActivity extends Activity
         etAdminPhone = findViewById(R.id.etAdminPhone);
         btAdminLogin = findViewById(R.id.btAdminLogin);
         btAdminCancel = findViewById(R.id.btAdminCancel);
-
-
-
     }
 }
