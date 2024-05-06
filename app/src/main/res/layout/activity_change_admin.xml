@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4"
+    tools:context=".ChangeAdminActivity">
+
+    <TextView
+        android:text="Change Admin"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical"
+        android:weightSum="3"
+        >
+        <EditText
+            android:id="@+id/etAdminUser"
+            android:hint="Username"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:background="@drawable/edittext1"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></EditText>
+
+        <EditText
+            android:id="@+id/etAdminPass"
+            android:hint="Password"
+            android:gravity="center"
+            android:background="@drawable/edittext1"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <Button
+                android:id="@+id/btChangeAdmin"
+                android:text="Change"
+                android:background="@drawable/button1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_gravity="top"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></Button>
+
+            <Button
+                android:id="@+id/btCancelAdmin"
+                android:text="Cancel"
+                android:background="@drawable/button1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

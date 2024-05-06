@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "502840939423",
+    "firebase_url": "https://fir-khushi-default-rtdb.firebaseio.com",
+    "project_id": "fir-khushi",
+    "storage_bucket": "fir-khushi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502840939423:android:5276d979a99c30b00763aa",
+        "android_client_info": {
+          "package_name": "com.example.firebasekhushi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCId69ty6KJor_tJS-v0Ni4MpZHy_ufJco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502840939423:android:0da9eb7d8cc683140763aa",
+        "android_client_info": {
+          "package_name": "com.example.virtualgrocerhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCId69ty6KJor_tJS-v0Ni4MpZHy_ufJco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

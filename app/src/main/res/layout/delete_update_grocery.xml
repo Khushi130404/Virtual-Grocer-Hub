@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="8"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:layout_weight="3"
+        android:background="@color/white"
+        android:weightSum="2"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="1"
+            >
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                ></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="4"
+            android:layout_marginLeft="10dp"
+            >
+            <TextView
+                android:id="@+id/tvName"
+                android:text="Name : "
+                android:textSize="17dp"
+                android:textColor="#164863"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:text="Price : "
+                android:textColor="#164863"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="17dp"
+                android:gravity="center_vertical"
+                ></TextView>
+            <TextView
+                android:id="@+id/tvQty"
+                android:text="Quantity : "
+                android:textColor="#164863"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textSize="17dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                ></TextView>
+            <TextView
+                android:id="@+id/tvUnit"
+                android:text="Unit : "
+                android:textColor="#164863"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="17dp"
+                ></TextView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="5"
+        android:weightSum="2"
+        >
+
+        <Button
+            android:id="@+id/btDelete"
+            android:text="Delete"
+            android:textColor="@color/white"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/button1"
+            android:layout_weight="1"
+            ></Button>
+
+        <Button
+            android:id="@+id/btUpdate"
+            android:text="Update"
+            android:layout_width="0dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/button1"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></Button>
+
+    </LinearLayout>
+
+</LinearLayout>
