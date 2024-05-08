@@ -7,9 +7,9 @@
         ></corners>
 
     <gradient
-        android:startColor="#73BBC9"
-        android:centerColor="#73BBC9"
-        android:endColor="#73BBC9"
+        android:startColor="#76ABAE"
+        android:centerColor="#76ABAE"
+        android:endColor="#76ABAE"
         android:angle="45"
         ></gradient>
 
