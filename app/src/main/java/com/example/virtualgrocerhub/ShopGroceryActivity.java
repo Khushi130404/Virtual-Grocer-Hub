@@ -26,6 +26,8 @@ public class ShopGroceryActivity extends Activity
     ShopGroceryAdapter ad;
     List<Grocery> grocery;
     DatabaseReference dbRef;
+    List<Integer> qty;
+    boolean visit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +39,7 @@ public class ShopGroceryActivity extends Activity
         tvAmount = findViewById(R.id.tvAmount);
 
         grocery = new ArrayList<Grocery>();
+        qty = new ArrayList<>();
         dbRef = FirebaseDatabase.getInstance().getReference("Grocery");
 
         dbRef.addValueEventListener(new ValueEventListener()
@@ -49,10 +52,15 @@ public class ShopGroceryActivity extends Activity
                 {
                     Grocery gc = snap.getValue(Grocery.class);
                     grocery.add(gc);
+                    if(!visit)
+                    {
+                        qty.add(0);
+                    }
                 }
+                visit = true;
                 if(!grocery.isEmpty())
                 {
-                    ad = new ShopGroceryAdapter(ShopGroceryActivity.this,R.layout.shop_grocery_adepter,grocery,tvAmount);
+                    ad = new ShopGroceryAdapter(ShopGroceryActivity.this,R.layout.shop_grocery_adepter,grocery,tvAmount,qty);
                     lvGrocery.setAdapter(ad);
                 }
                 else

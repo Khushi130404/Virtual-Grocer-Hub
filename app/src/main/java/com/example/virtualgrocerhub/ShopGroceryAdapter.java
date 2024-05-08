@@ -27,14 +27,16 @@ public class ShopGroceryAdapter extends ArrayAdapter
     int resource;
     List<Grocery> grocery;
     TextView tvAmount;
+    List<Integer> quantity;
 
-    public ShopGroceryAdapter(Context cont, int resource, List grocery,TextView tvAmount)
+    public ShopGroceryAdapter(Context cont, int resource, List grocery,TextView tvAmount,List<Integer> quantity)
     {
         super(cont, resource, grocery);
         this.cont = cont;
         this.grocery = grocery;
         this.resource = resource;
         this.tvAmount = tvAmount;
+        this.quantity = quantity;
     }
 
     @Override
@@ -55,6 +57,8 @@ public class ShopGroceryAdapter extends ArrayAdapter
         tvName.setText(gc.getgName());
         tvPrice.setText(""+gc.getPrice());
         tvUnit.setText(gc.getUnit());
+        tvQty.setText(""+quantity.get(position));
+        int available_Qty = gc.getQty();
 
         Glide.with(cont)
                 .load(gc.getImage())
@@ -72,6 +76,7 @@ public class ShopGroceryAdapter extends ArrayAdapter
                 {
                     qty--;
                     tvQty.setText(""+qty);
+                    quantity.set(position,qty);
                     tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())-gc.getPrice()));
                 }
             }
@@ -82,9 +87,17 @@ public class ShopGroceryAdapter extends ArrayAdapter
             public void onClick(View v)
             {
                 int qty = Integer.parseInt(tvQty.getText().toString());
-                qty++;
-                tvQty.setText(""+qty);
-                tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())+gc.getPrice()));
+                if(qty<available_Qty)
+                {
+                    qty++;
+                    tvQty.setText(""+qty);
+                    quantity.set(position,qty);
+                    tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())+gc.getPrice()));
+                }
+                else
+                {
+                    Toast.makeText(cont,"Product Quantity unavailable...!",Toast.LENGTH_LONG).show();
+                }
             }
         });
 

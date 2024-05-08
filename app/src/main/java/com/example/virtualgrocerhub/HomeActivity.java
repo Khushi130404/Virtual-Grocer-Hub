@@ -1,7 +1,5 @@
 package com.example.virtualgrocerhub;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +24,7 @@ public class HomeActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(getApplicationContext(),AdminLoginActivity.class);
+                Intent i = new Intent(getApplicationContext(), AdminRegistrationActivity.class);
                 startActivity(i);
             }
         });
@@ -34,10 +32,8 @@ public class HomeActivity extends Activity
         btShopper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ShopperLoginActivity.class);
+                Intent i = new Intent(getApplicationContext(), ShopGroceryActivity.class);
                 startActivity(i);
-
-
             }
         });
     }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -61,6 +62,8 @@ public class ShopperLoginActivity extends Activity {
                     edit.putLong("phone",phone);
 
                     Toast.makeText(getApplicationContext(),"Successfull Login...!",Toast.LENGTH_LONG);
+                    Intent i = new Intent(getApplicationContext(),ShopGroceryActivity.class);
+                    startActivity(i);
                 }
                 catch (NumberFormatException nfe)
                 {
