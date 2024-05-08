@@ -53,7 +53,7 @@ public class AdminActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(getApplicationContext(),ChangeAdminActivity.class);
+                Intent i = new Intent(getApplicationContext(),AdminOTPActivity.class);
                 startActivity(i);
             }
         });

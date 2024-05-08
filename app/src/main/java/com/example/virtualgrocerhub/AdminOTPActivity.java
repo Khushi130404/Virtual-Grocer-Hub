@@ -2,9 +2,10 @@ package com.example.virtualgrocerhub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 
-public class AdminOTPActivity extends AppCompatActivity {
+public class AdminOTPActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
