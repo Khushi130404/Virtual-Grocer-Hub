@@ -51,8 +51,6 @@ public class AddGroceryActivity extends Activity {
         btAddImage = findViewById(R.id.btAddImage);
         imgAdd = findViewById(R.id.imgAdd);
 
-
-
         btAddImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +115,8 @@ public class AddGroceryActivity extends Activity {
                     etAddUnit.setText("");
                     etAddPrice.setText("");
                     etAddQty.setText("");
+                    imgAdd.setImageURI(null);
+                   imgAdd.setBackground(getDrawable(R.drawable.edittext1));
                 }
             }
         });
@@ -129,6 +129,7 @@ public class AddGroceryActivity extends Activity {
                 etAddName.setText("");
                 etAddQty.setText("");
                 etAddPrice.setText("");
+                imgAdd.setBackground(getDrawable(R.drawable.edittext1));
             }
         });
     }
@@ -145,7 +146,4 @@ public class AddGroceryActivity extends Activity {
 
     }
 
-    public void addGrocery()
-    {
-    }
 }
