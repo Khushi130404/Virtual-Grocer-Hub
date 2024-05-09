@@ -164,7 +164,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.7"
+        android:layout_weight="3"
         android:weightSum="3"
         android:layout_gravity="center|bottom"
         android:orientation="vertical"
@@ -173,7 +173,7 @@
 
         <ImageView
             android:id="@+id/imgAdd"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/edittext1"
             android:layout_marginRight="90dp"
             android:layout_marginLeft="90dp"
@@ -185,7 +185,7 @@
             android:textSize="20dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.3"
+            android:layout_weight="2.4"
             ></ImageView>
 
         <Button
@@ -193,15 +193,15 @@
             android:text="Add Image"
             android:gravity="center"
             android:textSize="20dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginRight="90dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/button1"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
             android:textColor="@color/white"
             android:layout_height="0dp"
-            android:layout_weight="0.7"
+            android:layout_weight="0.6"
             ></Button>
 
     </LinearLayout>
@@ -209,19 +209,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.3"
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="2"
         >
 
         <Button
             android:id="@+id/btAddGrocery"
-            android:text="Add \nGrocery"
+            android:text="Add"
             android:textSize="20dp"
             android:textColor="@color/white"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="27dp"
+            android:layout_marginLeft="40dp"
             android:background="@drawable/button1"
             android:layout_marginRight="10dp"
             android:layout_width="0dp"
@@ -234,10 +234,10 @@
             android:text="Cancel"
             android:textSize="20dp"
             android:textColor="@color/white"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="27dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/button1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
