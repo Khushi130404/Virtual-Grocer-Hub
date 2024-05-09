@@ -192,7 +192,7 @@
             android:id="@+id/btAddImage"
             android:text="Add Image"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:background="@drawable/button1"
@@ -217,7 +217,7 @@
         <Button
             android:id="@+id/btAddGrocery"
             android:text="Add"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="27dp"
@@ -232,7 +232,7 @@
         <Button
             android:id="@+id/btAddCancel"
             android:text="Cancel"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="27dp"

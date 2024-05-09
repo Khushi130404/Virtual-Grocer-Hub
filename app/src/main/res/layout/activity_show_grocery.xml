@@ -11,7 +11,7 @@
     <ListView
         android:id="@+id/lvGrocery"
         android:layout_width="match_parent"
-        android:background="@drawable/img1"
+        android:background="@drawable/otp2"
         android:layout_height="0dp"
         android:layout_weight="1"
         ></ListView>

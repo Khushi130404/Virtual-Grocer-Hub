@@ -31,7 +31,7 @@
         <Button
             android:id="@+id/btAdmin"
             android:text="Admin"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -43,7 +43,7 @@
         <Button
             android:id="@+id/btShopper"
             android:text="Shopper"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textColor="@color/white"
             android:layout_marginTop="7dp"
             android:layout_width="match_parent"
