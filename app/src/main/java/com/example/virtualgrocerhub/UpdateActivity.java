@@ -32,7 +32,6 @@ import java.util.List;
 
 public class UpdateActivity extends Activity
 {
-
     EditText etChangeName,etChangeUnit,etChangePrice,etChangeQty;
     Button btChangeGrocery,btChangeCancel,btChangeImage;
     ImageView imgChange;
@@ -50,14 +49,14 @@ public class UpdateActivity extends Activity
         Intent ii = getIntent();
         String gId = ii.getStringExtra("gId");
 
-        etChangeName = findViewById(R.id.etChangeName);
-        etChangePrice = findViewById(R.id.etChangePrice);
-        etChangeQty = findViewById(R.id.etChangeQty);
-        etChangeUnit = findViewById(R.id.etChangeUnit);
-        imgChange = findViewById(R.id.imgChange);
-        btChangeCancel = findViewById(R.id.btChangeCancel);
-        btChangeImage = findViewById(R.id.btChangeImage);
-        btChangeGrocery = findViewById(R.id.btChangeGrocery);
+        etChangeName = findViewById(R.id.etUpdateName);
+        etChangePrice = findViewById(R.id.etUpdatePrice);
+        etChangeQty = findViewById(R.id.etUpdateQty);
+        etChangeUnit = findViewById(R.id.etUpdateUnit);
+        imgChange = findViewById(R.id.imgUpdate);
+        btChangeCancel = findViewById(R.id.btUpdateCancel);
+        btChangeImage = findViewById(R.id.btUpdateImage);
+        btChangeGrocery = findViewById(R.id.btUpdateGrocery);
 
         dbRef = FirebaseDatabase.getInstance().getReference("Grocery");
         Query updateQ = dbRef.child(gId);
@@ -101,8 +100,9 @@ public class UpdateActivity extends Activity
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onCancelled(@NonNull DatabaseError error)
+            {
+                Toast.makeText(getApplicationContext(),"Error : "+error.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
 
@@ -124,7 +124,6 @@ public class UpdateActivity extends Activity
                 StorageReference store = FirebaseStorage.getInstance().getReferenceFromUrl("gs://fir-khushi.appspot.com/Grocery");
                 final StorageReference getStore = store.child(etChangeName.getText().toString());
                 final StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(imgDel);
-
 
                 dbChild.child("gName").setValue(etChangeName.getText().toString());
                 dbChild.child("price").setValue(Integer.parseInt(etChangePrice.getText().toString()));
@@ -193,6 +192,20 @@ public class UpdateActivity extends Activity
                 }
             }
         });
+
+        btChangeCancel.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                etChangeName.setText("");
+                etChangeUnit.setText("");
+                etChangeQty.setText("");
+                etChangePrice.setText("");
+                imgChange.setBackground(getDrawable(R.drawable.edittext1));
+                imgChange.setImageDrawable(null);
+            }
+        });
     }
 
     @Override
@@ -206,5 +219,4 @@ public class UpdateActivity extends Activity
             flag = true;
         }
     }
-
 }
