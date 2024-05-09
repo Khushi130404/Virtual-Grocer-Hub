@@ -4,131 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
-    android:weightSum="5"
+    android:background="@drawable/otp"
+    android:weightSum="1"
     android:layout_height="match_parent"
     tools:context=".AdminLoginActivity">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_marginBottom="80dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:weightSum="3"
-        android:background="@drawable/linear_layout"
-        android:layout_weight="3"
-        >
-
-        <EditText
-            android:id="@+id/etUser"
-            android:hint="Username"
-            android:textColor="#161A30"
-            android:textColorHint="#164863"
-            android:background="@drawable/edittext1"
-            android:alpha="0.5"
-            android:textAlignment="center"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.65"
-            ></EditText>
-
-        <EditText
-            android:id="@+id/etPass"
-            android:hint="Password"
-            android:alpha="0.5"
-            android:background="@drawable/edittext1"
-            android:textAlignment="center"
-            android:textColor="#161A30"
-            android:textColorHint="#164863"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.65"
-            ></EditText>
+        android:layout_weight="1"
+        app:cardBackgroundColor="#76ABAE"
+        app:cardCornerRadius="80sp"
+        android:alpha="0.8"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="170dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:layout_marginBottom="170dp"
+        app:cardElevation="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:paddingEnd="30dp"
-            android:layout_gravity="top"
-            android:paddingTop="0dp"
-            android:paddingBottom="30dp"
-            android:paddingStart="30dp"
-            android:layout_weight="1.7">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:weightSum="3"
+            >
 
-            <Button
-                android:id="@+id/btLogin"
-                android:text="Login"
-                android:textSize="15dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_width="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/button1"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                ></Button>
-
-            <Button
-                android:id="@+id/btCancel"
-                android:text="Cancel"
-                android:textSize="15dp"
+            <EditText
+                android:id="@+id/etUser"
+                android:hint="Username"
+                android:textColor="#161A30"
+                android:textColorHint="#164863"
+                android:alpha="0.8"
+                android:background="@drawable/edittext1"
+                android:textAlignment="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_width="0dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/button1"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                ></Button>
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                ></EditText>
 
+            <EditText
+                android:id="@+id/etPass"
+                android:hint="Password"
+                android:background="@drawable/edittext1"
+                android:textAlignment="center"
+                android:textColor="#161A30"
+                android:alpha="0.8"
+                android:textColorHint="#164863"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                ></EditText>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:paddingBottom="30dp"
+                android:layout_gravity="top"
+                android:layout_weight="1.8">
+
+                <Button
+                    android:id="@+id/btLogin"
+                    android:text="Login"
+                    android:textSize="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/button3"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    ></Button>
+
+                <Button
+                    android:id="@+id/btCancel"
+                    android:text="Cancel"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/button3"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    ></Button>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:background="@drawable/shopgr"
-        android:weightSum="1"
-        android:paddingTop="50dp"
-        android:paddingStart="50dp"
-        android:paddingEnd="50dp"
-        android:paddingBottom="50dp"
-        android:layout_weight="2"
-        >
-
-        <Button
-            android:id="@+id/btShop"
-            android:text="Shop \n Grocery"
-            android:textSize="30dp"
-            android:textColor="#161A30"
-            android:fontFamily="serif"
-            android:background="@drawable/button2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textStyle="italic|bold"
-            ></Button>
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

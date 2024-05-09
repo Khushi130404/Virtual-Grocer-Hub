@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
+    android:background="@drawable/otp"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
@@ -20,7 +21,6 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:paddingEnd="100dp"
-        android:background="#DAFFFB"
         android:paddingStart="100dp"
         android:paddingBottom="30dp"
         android:paddingTop="30dp"
@@ -32,7 +32,7 @@
             android:id="@+id/btAdmin"
             android:text="Admin"
             android:textSize="20dp"
-            android:textColor="#DAFFFB"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
             android:id="@+id/btShopper"
             android:text="Shopper"
             android:textSize="20dp"
-            android:textColor="#DAFFFB"
+            android:textColor="@color/white"
             android:layout_marginTop="7dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
