@@ -61,6 +61,7 @@
                     >
 
                     <EditText
+                        android:id="@+id/et1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -75,6 +76,7 @@
                         ></EditText>
 
                     <EditText
+                        android:id="@+id/et2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -89,6 +91,7 @@
                         ></EditText>
 
                     <EditText
+                        android:id="@+id/et3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -103,6 +106,7 @@
                         ></EditText>
 
                     <EditText
+                        android:id="@+id/et4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -126,6 +130,7 @@
                     android:weightSum="2"
                     >
                     <Button
+                        android:id="@+id/btVerify"
                         android:layout_width="match_parent"
                         android:text="Verify"
                         android:textSize="18dp"
@@ -141,6 +146,7 @@
                         ></Button>
 
                     <Button
+                        android:id="@+id/btSendAgain"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"

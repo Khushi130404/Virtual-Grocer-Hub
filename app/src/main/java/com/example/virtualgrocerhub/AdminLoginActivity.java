@@ -16,7 +16,6 @@ public class AdminLoginActivity extends Activity
 {
     EditText etUser,etPass;
     Button btLogin,btCancel;
-    Button btShop;
     public String user,pass;
     SharedPreferences share;
 
@@ -30,7 +29,6 @@ public class AdminLoginActivity extends Activity
         etUser = findViewById(R.id.etUser);
         btLogin = findViewById(R.id.btLogin);
         btCancel = findViewById(R.id.btCancel);
-        btShop = findViewById(R.id.btShop);
 
         share = getSharedPreferences("admin", Context.MODE_PRIVATE);
         user = share.getString("username","admin");

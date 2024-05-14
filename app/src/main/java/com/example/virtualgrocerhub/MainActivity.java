@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +22,6 @@ public class MainActivity extends Activity
 
         Intent i = new Intent(getApplicationContext(),HomeActivity.class);
         startActivity(i);
+        finish();
     }
 }

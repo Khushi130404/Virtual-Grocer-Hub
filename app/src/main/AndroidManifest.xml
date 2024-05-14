@@ -25,13 +25,7 @@
             android:name=".AdminRegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminRegistrationActivity"
-            android:exported="false" />
-        <activity
             android:name=".ShopperLoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GenerateOTPActivity"
             android:exported="false" />
         <activity
             android:name=".ShopGroceryActivity"

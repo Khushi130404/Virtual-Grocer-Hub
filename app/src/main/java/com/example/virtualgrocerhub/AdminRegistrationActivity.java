@@ -15,8 +15,8 @@ public class AdminRegistrationActivity extends Activity
     EditText etAdminName, etAdminMail, etAdminAdd,etAdminPhone;
     Button btAdminLogin,btAdminCancel;
     SharedPreferences share;
-    String username,address,mail;
-    long phone;
+    String username,address,mail,phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +32,11 @@ public class AdminRegistrationActivity extends Activity
         share = getSharedPreferences("adminReg", Context.MODE_PRIVATE);
 
         username = share.getString("username","null");
-        phone = share.getLong("phone",0);
+        phone = share.getString("phone","0");
         address = share.getString("address","null");
         mail = share.getString("mail","null");
 
-        if(username.equals("null") && phone==0 && address.equals("null") && mail.equals("null"))
+        if(username.equals("null") && phone.equals("0") && address.equals("null") && mail.equals("null"))
         {
             btAdminLogin.setOnClickListener(new View.OnClickListener()
             {
@@ -45,7 +45,7 @@ public class AdminRegistrationActivity extends Activity
                 {
                     try
                     {
-                        phone = Long.parseLong(etAdminPhone.getText().toString());
+                        phone = etAdminPhone.getText().toString();
                         username = etAdminName.getText().toString();
                         mail = etAdminMail.getText().toString();
                         address = etAdminAdd.getText().toString();
@@ -56,9 +56,14 @@ public class AdminRegistrationActivity extends Activity
                         edit.putString("username",username);
                         edit.putString("address",address);
                         edit.putString("mail",mail);
-                        edit.putLong("phone",phone);
+                        edit.putString("phone",phone);
+                        edit.apply();
 
-                        Toast.makeText(getApplicationContext(),"Successfull Login...!",Toast.LENGTH_LONG);
+                        Toast.makeText(getApplicationContext(),"Successfull Login...!",Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(),AdminLoginActivity.class);
+                        startActivity(i);
+                        finish();
+
                     }
                     catch (NumberFormatException nfe)
                     {
@@ -78,11 +83,12 @@ public class AdminRegistrationActivity extends Activity
                     etAdminMail.setText("");
                 }
             });
-
         }
-        Intent i = new Intent(getApplicationContext(),AdminLoginActivity.class);
-        startActivity(i);
-        finish();
-
+        else
+        {
+            Intent i = new Intent(getApplicationContext(),AdminLoginActivity.class);
+            startActivity(i);
+            finish();
+        }
     }
 }
