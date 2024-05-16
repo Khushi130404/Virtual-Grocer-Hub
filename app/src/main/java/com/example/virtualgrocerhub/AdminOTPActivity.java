@@ -49,6 +49,11 @@ public class AdminOTPActivity extends Activity
             public void onClick(View v)
             {
                 int newOtp = random.nextInt(9999);
+                while(newOtp<1000)
+                {
+                    newOtp = random.nextInt(9999);
+                }
+
                 Intent i = new Intent(getApplicationContext(),AdminOTPActivity.class);
                 i.putExtra("otp",newOtp);
 

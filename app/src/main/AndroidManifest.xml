@@ -19,6 +19,9 @@
         android:theme="@style/Theme.VirtualGrocerHub"
         tools:targetApi="31">
         <activity
+            android:name=".CheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminOTPActivity"
             android:exported="false" />
         <activity
