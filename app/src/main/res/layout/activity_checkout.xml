@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:background="#E5F7F7"
+    android:weightSum="12"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity">
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:text="Date : "
+        android:textSize="16dp"
+        android:textColor="#3C707C"
+        android:gravity="bottom|end"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:text="Time : "
+        android:textSize="16dp"
+        android:textColor="#3C707C"
+        android:layout_gravity="top|end"
+        android:textAlignment="textEnd"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="20dp"
+        android:background="#76ABAE"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_weight="1.2"
+        >
+        <TextView
+            android:text="Item"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:text="Qty"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:text="Rate"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:text="Amount"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#76ABAE"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_weight="7.5"
+        >
+        <ListView
+            android:id="@+id/lvItem"
+            android:background="@drawable/otp"
+            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.7"
+        android:orientation="vertical"
+        android:weightSum="3"
+        android:paddingTop="10dp"
+        android:layout_marginRight="30dp"
+        >
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:text="Amount : "
+            android:textSize="16dp"
+            android:textColor="#3C707C"
+            android:gravity="center|end"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/tvTax"
+            android:text="Tax : "
+            android:textSize="16dp"
+            android:textColor="#3C707C"
+            android:gravity="center|end"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/tvFinalBill"
+            android:text="Final Bill : "
+            android:textSize="16dp"
+            android:textColor="#3C707C"
+            android:gravity="center|end"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></TextView>
+
+    </LinearLayout>
+
+</LinearLayout>

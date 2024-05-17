@@ -24,7 +24,7 @@ public class HomeActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(getApplicationContext(), AdminRegistrationActivity.class);
+                Intent i = new Intent(getApplicationContext(), AdminLoginActivity.class);
                 startActivity(i);
             }
         });

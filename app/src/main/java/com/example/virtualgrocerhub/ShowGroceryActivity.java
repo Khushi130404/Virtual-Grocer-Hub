@@ -23,7 +23,6 @@ public class ShowGroceryActivity extends Activity {
     List<Grocery> gc;
     DatabaseReference dbRef;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +31,6 @@ public class ShowGroceryActivity extends Activity {
         lvGrocery = findViewById(R.id.lvGrocery);
         gc = new ArrayList<Grocery>();
         dbRef = FirebaseDatabase.getInstance().getReference("Grocery");
-
 
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -70,7 +68,5 @@ public class ShowGroceryActivity extends Activity {
                 Toast.makeText(getApplicationContext(),"Bye",Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 }

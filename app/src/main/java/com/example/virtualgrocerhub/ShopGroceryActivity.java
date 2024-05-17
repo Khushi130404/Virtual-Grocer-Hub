@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +30,9 @@ public class ShopGroceryActivity extends Activity
     List<Grocery> grocery;
     DatabaseReference dbRef;
     List<Integer> qty;
+    static List<ItemBill> bill;
     boolean visit = false;
+    Button btCheckout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,8 +42,10 @@ public class ShopGroceryActivity extends Activity
 
         lvGrocery = findViewById(R.id.lvGrocery);
         tvAmount = findViewById(R.id.tvAmount);
+        btCheckout = findViewById(R.id.btCheckout);
 
         grocery = new ArrayList<Grocery>();
+        bill = new ArrayList<>();
         qty = new ArrayList<>();
         dbRef = FirebaseDatabase.getInstance().getReference("Grocery");
 
@@ -60,7 +67,7 @@ public class ShopGroceryActivity extends Activity
                 visit = true;
                 if(!grocery.isEmpty())
                 {
-                    ad = new ShopGroceryAdapter(ShopGroceryActivity.this,R.layout.shop_grocery_adepter,grocery,tvAmount,qty);
+                    ad = new ShopGroceryAdapter(ShopGroceryActivity.this,R.layout.shop_grocery_adepter,grocery,tvAmount,qty,bill);
                     lvGrocery.setAdapter(ad);
                 }
                 else
@@ -73,6 +80,17 @@ public class ShopGroceryActivity extends Activity
             public void onCancelled(@NonNull DatabaseError error)
             {
                 Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btCheckout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(getApplicationContext(), CheckoutActivity.class);
+                i.putExtra("amount",tvAmount.getText().toString());
+                startActivity(i);
             }
         });
     }

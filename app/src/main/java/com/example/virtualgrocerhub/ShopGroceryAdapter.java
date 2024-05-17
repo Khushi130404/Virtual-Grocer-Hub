@@ -26,14 +26,16 @@ public class ShopGroceryAdapter extends ArrayAdapter
     Context cont;
     int resource;
     List<Grocery> grocery;
+    List<ItemBill> bill;
     TextView tvAmount;
     List<Integer> quantity;
 
-    public ShopGroceryAdapter(Context cont, int resource, List grocery,TextView tvAmount,List<Integer> quantity)
+    public ShopGroceryAdapter(Context cont, int resource, List grocery,TextView tvAmount,List<Integer> quantity,List<ItemBill> bill)
     {
         super(cont, resource, grocery);
         this.cont = cont;
         this.grocery = grocery;
+        this.bill = bill;
         this.resource = resource;
         this.tvAmount = tvAmount;
         this.quantity = quantity;
@@ -45,6 +47,11 @@ public class ShopGroceryAdapter extends ArrayAdapter
         LayoutInflater inflater = LayoutInflater.from(cont);
         View view = inflater.inflate(resource,null,false);
         Grocery gc = grocery.get(position);
+        ItemBill item = new ItemBill();
+
+        item.setItem(gc.getgName());
+        item.setQty(0);
+        item.setRate(gc.getPrice());
 
         Button btPlus = view.findViewById(R.id.btPlus);
         Button btMinus = view.findViewById(R.id.btMinus);
@@ -78,7 +85,12 @@ public class ShopGroceryAdapter extends ArrayAdapter
                     tvQty.setText(""+qty);
                     quantity.set(position,qty);
                     tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())-gc.getPrice()));
+                    if(qty==0)
+                    {
+                        bill.remove(item);
+                    }
                 }
+
             }
         });
 
@@ -93,6 +105,12 @@ public class ShopGroceryAdapter extends ArrayAdapter
                     tvQty.setText(""+qty);
                     quantity.set(position,qty);
                     tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())+gc.getPrice()));
+                    if(bill.contains(item))
+                    {
+                        bill.remove(item);
+                    }
+                    item.setQty(qty);
+                    bill.add(item);
                 }
                 else
                 {

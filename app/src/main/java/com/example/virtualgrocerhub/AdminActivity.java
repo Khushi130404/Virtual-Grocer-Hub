@@ -68,7 +68,12 @@ public class AdminActivity extends Activity {
                 share = getSharedPreferences("adminReg", Context.MODE_PRIVATE);
 
                 phone = share.getString("phone","0");
+
                 int otp = random.nextInt(9999);
+                while(otp<1000)
+                {
+                    otp = random.nextInt(9999);
+                }
                 Intent i = new Intent(getApplicationContext(),AdminOTPActivity.class);
                 i.putExtra("otp",otp);
                 SmsManager sms=SmsManager.getDefault();
