@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Random;
+import java.util.stream.DoubleStream;
 
 public class AdminOTPActivity extends Activity
 {
@@ -25,7 +26,8 @@ public class AdminOTPActivity extends Activity
     String phone;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_otp);
 

@@ -42,7 +42,7 @@ public class AdminLoginActivity extends Activity
                 {
                     if(etPass.getText().toString().equals(pass))
                     {
-                        Intent i = new Intent(getApplicationContext(), AdminActivity.class);
+                        Intent i = new Intent(getApplicationContext(), AdminRegistrationActivity.class);
                         startActivity(i);
                         finish();
                     }

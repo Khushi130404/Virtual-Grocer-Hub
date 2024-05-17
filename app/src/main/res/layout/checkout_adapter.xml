@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="20dp"
+    android:weightSum="4"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvItem"
+            android:text="Item"
+            android:textSize="16dp"
+            android:textColor="#3C707C"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/tvQty"
+            android:text="Quantity"
+            android:textSize="16dp"
+            android:textColor="#3C707C"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/tvRate"
+            android:text="Rate"
+            android:textSize="16dp"
+            android:textColor="#3C707C"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:text="Amount"
+            android:textSize="16dp"
+            android:textColor="#3C707C"
+            android:layout_width="0dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></TextView>
+
+</LinearLayout>

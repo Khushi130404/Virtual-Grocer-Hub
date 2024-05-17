@@ -86,7 +86,7 @@ public class AdminRegistrationActivity extends Activity
         }
         else
         {
-            Intent i = new Intent(getApplicationContext(),AdminLoginActivity.class);
+            Intent i = new Intent(getApplicationContext(),AdminActivity.class);
             startActivity(i);
             finish();
         }

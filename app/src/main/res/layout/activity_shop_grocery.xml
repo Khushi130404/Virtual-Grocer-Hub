@@ -19,32 +19,49 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_weight="0.6"
+        android:layout_weight="0.3"
         >
 
         <TextView
-            android:text="Total Amount        : "
+            android:text="Total  :  "
             android:gravity="center|end"
             android:textSize="25dp"
             android:layout_width="0dp"
             android:textColor="#04364A"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="2.4"
             ></TextView>
 
         <TextView
             android:id="@+id/tvAmount"
             android:text="0"
-            android:gravity="center"
+            android:gravity="center|start"
             android:textSize="25dp"
             android:layout_width="0dp"
             android:textColor="#04364A"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             ></TextView>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btCheckout"
+        android:text="Check out"
+        android:textColor="@color/white"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        ></Button>
+
 
 </LinearLayout>
