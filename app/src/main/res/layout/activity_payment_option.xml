@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentOptionActivity">
+
+    <TextView
+        android:text="Payment Methods"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></TextView>
+
+    <ImageView
+        android:src="@drawable/card"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        ></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="6"
+        android:layout_weight="6"
+        >
+        <TextView
+            android:text="Choose Payment option"
+            android:gravity="center|start"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="20dp"
+                android:src="@drawable/credit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="Credit / Debit Card"
+                android:gravity="center|start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:src="@drawable/gpay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="Google Pay"
+                android:gravity="center|start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:src="@drawable/netbank"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="Net Banking"
+                android:gravity="center|start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:src="@drawable/phonepe"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="PhonePe"
+                android:gravity="center|start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:src="@drawable/cash"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="Cash on Delivery"
+                android:gravity="center|start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
