@@ -1,6 +1,10 @@
 package com.example.virtualgrocerhub;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,7 +20,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
-public class CheckoutActivity extends AppCompatActivity
+public class CheckoutActivity extends Activity
 {
     ListView lvItem;
     TextView tvDate, tvTime, tvAmount, tvTax, tvFinalBill;
@@ -24,6 +28,7 @@ public class CheckoutActivity extends AppCompatActivity
     LocalTime time;
     CheckoutAdapter cadd;
     ShopGroceryActivity shop;
+    Button btPay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,7 @@ public class CheckoutActivity extends AppCompatActivity
         tvAmount = findViewById(R.id.tvAmount);
         tvTax = findViewById(R.id.tvTax);
         tvFinalBill = findViewById(R.id.tvFinalBill);
+        btPay = findViewById(R.id.btPay);
 
         shop = new ShopGroceryActivity();
 
@@ -52,5 +58,16 @@ public class CheckoutActivity extends AppCompatActivity
         tvFinalBill.setText(tvFinalBill.getText().toString()+(int)(1.18*amount));
         cadd = new CheckoutAdapter(getApplicationContext(),R.layout.checkout_adapter,shop.bill);
         lvItem.setAdapter(cadd);
+
+
+        btPay.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(getApplicationContext(),PaymentOptionActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
