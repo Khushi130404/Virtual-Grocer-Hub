@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:weightSum="10"
+    android:weightSum="9.79"
     android:background="@drawable/otp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -218,6 +218,20 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:text="Amount Payable  :  ₹"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingRight="20dp"
+        android:textSize="20dp"
+        android:textColor="#DDF2FD"
+        android:background="@drawable/pay_box"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        ></TextView>
 
 
 </LinearLayout>
