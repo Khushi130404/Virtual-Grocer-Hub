@@ -88,9 +88,16 @@ public class ShopGroceryActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(getApplicationContext(), CheckoutActivity.class);
-                i.putExtra("amount",tvAmount.getText().toString());
-                startActivity(i);
+                if(!tvAmount.getText().toString().equals("0"))
+                {
+                    Intent i = new Intent(getApplicationContext(), CheckoutActivity.class);
+                    i.putExtra("amount",tvAmount.getText().toString());
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "No item selected...!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

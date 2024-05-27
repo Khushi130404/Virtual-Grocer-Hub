@@ -66,6 +66,7 @@ public class CheckoutActivity extends Activity
             public void onClick(View v)
             {
                 Intent i = new Intent(getApplicationContext(),PaymentOptionActivity.class);
+                i.putExtra("amount",(int)(1.18*amount));
                 startActivity(i);
             }
         });
