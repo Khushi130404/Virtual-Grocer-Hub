@@ -58,13 +58,19 @@ public class CheckoutAdapter extends ArrayAdapter
                 {
                     if(gc.get(i).getgId().equals(bill.get(position).getGId()))
                     {
+                        ShopGroceryActivity shop = new ShopGroceryActivity();
+                        CheckoutActivity check = new CheckoutActivity();
+                        check.amount = Integer.parseInt(shop.tvAmount.getText().toString())-(qty.get(i)*bill.get(position).getRate());
+                        shop.tvAmount.setText(""+check.amount);
+                        check.tvAmount.setText("Amount : "+check.amount);
+                        check.tvTax.setText("Tax : "+(int)(0.18*check.amount));
+                        check.tvFinalBill.setText("Final Bill : "+(int)(1.18*check.amount));
                         qty.set(i,0);
-
+                        shop.ad.notifyDataSetChanged();
                     }
                 }
                 bill.remove(position).setQty(0);
-                ShopGroceryActivity shop = new ShopGroceryActivity();
-                shop.notifyDataSetChanged();
+
                 notifyDataSetChanged();
             }
         });

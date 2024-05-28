@@ -22,7 +22,6 @@ import java.util.List;
 
 public class ShopGroceryAdapter extends ArrayAdapter
 {
-
     Context cont;
     int resource;
     List<Grocery> grocery;
@@ -120,7 +119,6 @@ public class ShopGroceryAdapter extends ArrayAdapter
                 }
             }
         });
-
         return view;
     }
 }

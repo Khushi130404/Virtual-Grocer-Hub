@@ -25,8 +25,8 @@ import java.util.List;
 public class ShopGroceryActivity extends Activity
 {
     ListView lvGrocery;
-    TextView tvAmount;
-    ShopGroceryAdapter ad;
+    static TextView tvAmount;
+    static ShopGroceryAdapter ad;
     static List<Grocery> grocery;
     DatabaseReference dbRef;
     static List<Integer> qty;
