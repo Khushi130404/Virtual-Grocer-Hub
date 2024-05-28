@@ -85,12 +85,13 @@ public class ShopGroceryAdapter extends ArrayAdapter
                     tvQty.setText(""+qty);
                     quantity.set(position,qty);
                     tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())-gc.getPrice()));
-                    if(qty==0)
+                    bill.remove(item);
+                    if(qty!=0)
                     {
-                        bill.remove(item);
+                        item.setQty(qty);
+                        bill.add(item);
                     }
                 }
-
             }
         });
 
