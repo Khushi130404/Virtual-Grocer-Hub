@@ -52,6 +52,7 @@ public class ShopGroceryAdapter extends ArrayAdapter
         item.setItem(gc.getgName());
         item.setQty(0);
         item.setRate(gc.getPrice());
+        item.setGId(gc.getgId());
 
         Button btPlus = view.findViewById(R.id.btPlus);
         Button btMinus = view.findViewById(R.id.btMinus);

@@ -27,9 +27,9 @@ public class ShopGroceryActivity extends Activity
     ListView lvGrocery;
     TextView tvAmount;
     ShopGroceryAdapter ad;
-    List<Grocery> grocery;
+    static List<Grocery> grocery;
     DatabaseReference dbRef;
-    List<Integer> qty;
+    static List<Integer> qty;
     static List<ItemBill> bill;
     boolean visit = false;
     Button btCheckout;

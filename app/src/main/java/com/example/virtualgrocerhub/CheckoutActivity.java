@@ -56,7 +56,7 @@ public class CheckoutActivity extends Activity
         tvAmount.setText(tvAmount.getText().toString()+amount);
         tvTax.setText(tvTax.getText().toString()+(int)(0.18*amount));
         tvFinalBill.setText(tvFinalBill.getText().toString()+(int)(1.18*amount));
-        cadd = new CheckoutAdapter(getApplicationContext(),R.layout.checkout_adapter,shop.bill);
+        cadd = new CheckoutAdapter(getApplicationContext(),R.layout.checkout_adapter,shop.bill,shop.qty,shop.grocery);
         lvItem.setAdapter(cadd);
 
 
