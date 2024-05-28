@@ -85,7 +85,21 @@ public class ShopGroceryAdapter extends ArrayAdapter
                     tvQty.setText(""+qty);
                     quantity.set(position,qty);
                     tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())-gc.getPrice()));
-                    bill.remove(item);
+                    if(bill.contains(item))
+                    {
+                        bill.remove(item);
+                    }
+                    else
+                    {
+                        for(int i=0; i<bill.size(); i++)
+                        {
+                            if(bill.get(i).getGId().equals(item.getGId()))
+                            {
+                                bill.remove(i);
+                                break;
+                            }
+                        }
+                    }
                     if(qty!=0)
                     {
                         item.setQty(qty);
@@ -106,10 +120,23 @@ public class ShopGroceryAdapter extends ArrayAdapter
                     tvQty.setText(""+qty);
                     quantity.set(position,qty);
                     tvAmount.setText(""+(Integer.parseInt(tvAmount.getText().toString())+gc.getPrice()));
+
                     if(bill.contains(item))
                     {
                         bill.remove(item);
                     }
+                    else
+                    {
+                        for(int i=0; i<bill.size(); i++)
+                        {
+                            if(bill.get(i).getGId().equals(item.getGId()))
+                            {
+                                bill.remove(i);
+                                break;
+                            }
+                        }
+                    }
+
                     item.setQty(qty);
                     bill.add(item);
                 }

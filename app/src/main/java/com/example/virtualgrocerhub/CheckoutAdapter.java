@@ -67,6 +67,7 @@ public class CheckoutAdapter extends ArrayAdapter
                         check.tvFinalBill.setText("Final Bill : "+(int)(1.18*check.amount));
                         qty.set(i,0);
                         shop.ad.notifyDataSetChanged();
+                        break;
                     }
                 }
                 bill.remove(position).setQty(0);
