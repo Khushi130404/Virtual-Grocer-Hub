@@ -56,7 +56,7 @@
                         android:text="Name    :"
                         android:gravity="center"
                         android:layout_width="0dp"
-                        android:textColor="#176B87"
+                        android:textColor="#164863"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         ></TextView>
@@ -65,7 +65,7 @@
                         android:id="@+id/tvName"
                         android:gravity="center"
                         android:layout_width="0dp"
-                        android:textColor="#176B87"
+                        android:textColor="#164863"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         ></TextView>
@@ -83,7 +83,7 @@
                         android:text="Price    :"
                         android:gravity="center"
                         android:layout_width="0dp"
-                        android:textColor="#176B87"
+                        android:textColor="#164863"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         ></TextView>
@@ -91,7 +91,7 @@
                     <TextView
                         android:id="@+id/tvPrice"
                         android:gravity="center"
-                        android:textColor="#176B87"
+                        android:textColor="#164863"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -110,7 +110,7 @@
                         android:text="wt per qty  :"
                         android:gravity="center"
                         android:layout_width="0dp"
-                        android:textColor="#176B87"
+                        android:textColor="#164863"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         ></TextView>
@@ -118,7 +118,7 @@
                     <TextView
                         android:id="@+id/tvUnit"
                         android:layout_width="0dp"
-                        android:textColor="#176B87"
+                        android:textColor="#164863"
                         android:gravity="center"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#B3E8E5"
+    android:background="@drawable/otp2"
     android:weightSum="5"
     android:layout_height="match_parent"
     tools:context=".ShopGroceryActivity">
