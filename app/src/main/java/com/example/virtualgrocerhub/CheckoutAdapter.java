@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,14 +18,17 @@ public class CheckoutAdapter extends ArrayAdapter
     Context cont;
     int resource;
     List<ItemBill> bill;
+    List<Integer> qty;
+    List<Grocery> gc;
 
-
-    public CheckoutAdapter(Context cont, int resource, List<ItemBill> bill)
+    public CheckoutAdapter(Context cont, int resource, List<ItemBill> bill, List<Integer> qty, List<Grocery> gc)
     {
         super(cont, resource, bill);
         this.cont = cont;
         this.resource = resource;
         this.bill = bill;
+        this.qty = qty;
+        this.gc = gc;
     }
 
     @Override
@@ -38,11 +42,32 @@ public class CheckoutAdapter extends ArrayAdapter
         TextView tvQty = view.findViewById(R.id.tvQty);
         TextView tvRate = view.findViewById(R.id.tvRate);
         TextView tvAmount = view.findViewById(R.id.tvAmount);
+        ImageView imgBin = view.findViewById(R.id.imgBin);
 
         tvItem.setText(item.getItem());
         tvQty.setText(""+item.getQty());
         tvRate.setText(""+item.getRate());
         tvAmount.setText(""+(item.getQty()*item.getRate()));
+
+        imgBin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                for(int i=0; i<gc.size(); i++)
+                {
+                    if(gc.get(i).getgId().equals(bill.get(position).getGId()))
+                    {
+                        qty.set(i,0);
+
+                    }
+                }
+                bill.remove(position).setQty(0);
+                ShopGroceryActivity shop = new ShopGroceryActivity();
+                shop.notifyDataSetChanged();
+                notifyDataSetChanged();
+            }
+        });
         return view;
     }
 }
