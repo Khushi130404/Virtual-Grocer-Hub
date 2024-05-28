@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,12 +24,14 @@ import java.util.Date;
 public class CheckoutActivity extends Activity
 {
     ListView lvItem;
-    TextView tvDate, tvTime, tvAmount, tvTax, tvFinalBill;
+    TextView tvDate, tvTime;
+    static TextView  tvAmount, tvTax, tvFinalBill;
     LocalDate today;
     LocalTime time;
-    CheckoutAdapter cadd;
+    static CheckoutAdapter cadd;
     ShopGroceryActivity shop;
     Button btPay;
+    static int amount=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +55,7 @@ public class CheckoutActivity extends Activity
         formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         tvDate.setText(tvDate.getText().toString()+today.format(formatter));
 
-        int amount = Integer.parseInt(getIntent().getStringExtra("amount"));
+        amount = Integer.parseInt(getIntent().getStringExtra("amount"));
         tvAmount.setText(tvAmount.getText().toString()+amount);
         tvTax.setText(tvTax.getText().toString()+(int)(0.18*amount));
         tvFinalBill.setText(tvFinalBill.getText().toString()+(int)(1.18*amount));
@@ -65,9 +68,16 @@ public class CheckoutActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(getApplicationContext(),PaymentOptionActivity.class);
-                i.putExtra("amount",(int)(1.18*amount));
-                startActivity(i);
+                if(amount!=0)
+                {
+                    Intent i = new Intent(getApplicationContext(),PaymentOptionActivity.class);
+                    i.putExtra("amount",(int)(1.18*amount));
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Empty Cart...!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
