@@ -1,5 +1,6 @@
 package com.example.virtualgrocerhub;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -26,7 +27,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.List;
 import java.util.Locale;
 
-public class ShopperAddressActivity extends AppCompatActivity implements LocationListener
+public class ShopperAddressActivity extends Activity implements LocationListener
 {
     RadioButton rbCurret, rbOther;
     EditText etCurrent, etOther;

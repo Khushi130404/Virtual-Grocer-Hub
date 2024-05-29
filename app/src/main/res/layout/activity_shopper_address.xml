@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:weightSum="5.5"
+    android:weightSum="6.5"
+    android:background="@drawable/otp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShopperAddressActivity">
@@ -12,12 +13,20 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5">
+        android:layout_marginTop="30dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/googlemap"
+        android:layout_weight="2">
     </ImageView>
 
     <TextView
         android:text="Current Address"
-        android:gravity="center"
+        android:gravity="center|bottom"
+        android:textSize="18dp"
+        android:textColor="#164863"
+        android:textStyle="bold"
+        android:paddingBottom="2dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -28,23 +37,35 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:weightSum="4"
-        android:layout_weight="1"
+        android:layout_weight="1.55"
         >
 
         <RadioButton
             android:id="@+id/rbCurrent"
             android:gravity="center"
+            android:buttonTint="#3C707C"
+            android:shadowColor="#3C707C"
+            android:layout_marginLeft="30dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             ></RadioButton>
 
         <EditText
             android:id="@+id/etCurrent"
             android:gravity="center"
             android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textColorHint="#76ABAE"
+            android:textColor="#3C707C"
+            android:hint="Live location inavailable"
+            android:background="@drawable/address_box"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="40dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="3.5"
             ></EditText>
 
     </LinearLayout>
@@ -52,9 +73,13 @@
 
     <TextView
         android:text="Other Address"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:gravity="center|bottom"
+        android:textSize="18dp"
+        android:paddingBottom="2dp"
+        android:textColor="#164863"
+        android:textStyle="bold"
         android:layout_weight="0.5"
         ></TextView>
 
@@ -63,23 +88,35 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:weightSum="4"
-        android:layout_weight="1"
+        android:layout_weight="1.55"
         >
 
         <RadioButton
             android:id="@+id/rbOther"
             android:gravity="center"
+            android:buttonTint="#3C707C"
+            android:shadowColor="#3C707C"
+            android:layout_marginLeft="30dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             ></RadioButton>
 
         <EditText
             android:id="@+id/etOther"
             android:gravity="center"
+            android:layout_marginLeft="10dp"
             android:layout_width="0dp"
+            android:textColorHint="#76ABAE"
+            android:textSize="15dp"
+            android:textColor="#3C707C"
+            android:hint="Enter Address"
+            android:background="@drawable/address_box"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="40dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="3.5"
             ></EditText>
 
     </LinearLayout>
@@ -87,9 +124,16 @@
     <Button
         android:id="@+id/btProceed"
         android:text="Proceed"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button3"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.4"
         ></Button>
 
 </LinearLayout>
