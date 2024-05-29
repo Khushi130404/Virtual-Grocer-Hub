@@ -62,7 +62,6 @@ public class CheckoutActivity extends Activity
         cadd = new CheckoutAdapter(getApplicationContext(),R.layout.checkout_adapter,shop.bill,shop.qty,shop.grocery);
         lvItem.setAdapter(cadd);
 
-
         btPay.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -70,7 +69,7 @@ public class CheckoutActivity extends Activity
             {
                 if(amount!=0)
                 {
-                    Intent i = new Intent(getApplicationContext(),PaymentOptionActivity.class);
+                    Intent i = new Intent(getApplicationContext(),ShopperAddressActivity.class);
                     i.putExtra("amount",(int)(1.18*amount));
                     startActivity(i);
                 }

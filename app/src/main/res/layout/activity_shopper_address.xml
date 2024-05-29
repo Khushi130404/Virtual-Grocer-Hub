@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:weightSum="5.5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopperAddressActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+    </ImageView>
+
+    <TextView
+        android:text="Current Address"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_weight="1"
+        >
+
+        <RadioButton
+            android:id="@+id/rbCurrent"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></RadioButton>
+
+        <EditText
+            android:id="@+id/etCurrent"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            ></EditText>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:text="Other Address"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_weight="1"
+        >
+
+        <RadioButton
+            android:id="@+id/rbOther"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            ></RadioButton>
+
+        <EditText
+            android:id="@+id/etOther"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            ></EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btProceed"
+        android:text="Proceed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></Button>
+
+</LinearLayout>
