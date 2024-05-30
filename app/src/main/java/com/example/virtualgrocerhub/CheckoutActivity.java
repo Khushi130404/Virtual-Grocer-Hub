@@ -32,6 +32,8 @@ public class CheckoutActivity extends Activity
     ShopGroceryActivity shop;
     Button btPay;
     static int amount=0;
+    private static CheckoutActivity instance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,7 @@ public class CheckoutActivity extends Activity
 
         shop = new ShopGroceryActivity();
 
+        instance = this;
         today = LocalDate.now();
         time = LocalTime.now();
 
@@ -79,5 +82,12 @@ public class CheckoutActivity extends Activity
                 }
             }
         });
+    }
+
+    public static void finishActivity()
+    {
+        if(instance!=null) {
+            instance.finish();
+        }
     }
 }
