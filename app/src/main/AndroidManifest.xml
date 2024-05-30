@@ -6,7 +6,6 @@
         android:name="android.hardware.telephony"
         android:required="false" />
 
-
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -28,6 +27,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VirtualGrocerHub"
         tools:targetApi="31">
+        <activity
+            android:name=".FinalPaymentActivity"
+            android:exported="false" />
         <activity
             android:name=".ShopperAddressActivity"
             android:exported="false" />
