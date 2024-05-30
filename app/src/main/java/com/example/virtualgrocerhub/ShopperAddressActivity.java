@@ -39,6 +39,7 @@ public class ShopperAddressActivity extends Activity implements LocationListener
     double latitude = 0, longitude = 0;
     Geocoder geo;
     Address addr;
+    private static ShopperAddressActivity instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,8 @@ public class ShopperAddressActivity extends Activity implements LocationListener
         man = (LocationManager) getSystemService(LOCATION_SERVICE);
         isNet = man.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         isGps = man.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+        instance = this;
 
         if (isNet || isGps)
         {
@@ -176,6 +179,13 @@ public class ShopperAddressActivity extends Activity implements LocationListener
             }
         });
 
+    }
+
+    public static void finishActivity()
+    {
+        if(instance!=null) {
+            instance.finish();
+        }
     }
 
     @Override

@@ -136,7 +136,7 @@ public class DeleteUpdateAdapter extends ArrayAdapter<Grocery>
             {
                 if(snapshot.exists())
                 {
-                    Toast.makeText(cont.getApplicationContext(),""+grocery.get(position).getgId(),Toast.LENGTH_LONG).show();
+                    //Toast.makeText(cont.getApplicationContext(),""+grocery.get(position).getgId(),Toast.LENGTH_LONG).show();
                     snapshot.getRef().removeValue();
                     StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(grocery.get(position).getImage());
                     storeRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -153,7 +153,7 @@ public class DeleteUpdateAdapter extends ArrayAdapter<Grocery>
                             Toast.makeText(cont.getApplicationContext(),"Deletion Failed...!",Toast.LENGTH_LONG).show();
                         }
                     });
-
+                    Toast.makeText(cont.getApplicationContext(),"Grocery deleted...!",Toast.LENGTH_LONG).show();
                 }
                 else
                 {

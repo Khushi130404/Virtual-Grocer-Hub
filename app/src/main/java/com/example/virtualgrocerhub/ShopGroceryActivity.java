@@ -31,7 +31,7 @@ public class ShopGroceryActivity extends Activity
     DatabaseReference dbRef;
     static List<Integer> qty;
     static List<ItemBill> bill;
-    boolean visit = false;
+    static boolean visit = false;
     Button btCheckout;
 
     @Override
@@ -55,6 +55,7 @@ public class ShopGroceryActivity extends Activity
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
                 grocery.clear();
+
                 for(DataSnapshot snap : snapshot.getChildren())
                 {
                     Grocery gc = snap.getValue(Grocery.class);
@@ -100,5 +101,12 @@ public class ShopGroceryActivity extends Activity
                 }
             }
         });
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        visit = false;
     }
 }

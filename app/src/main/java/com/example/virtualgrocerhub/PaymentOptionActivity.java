@@ -39,6 +39,7 @@ public class PaymentOptionActivity extends Activity
             {
                 Intent i = new Intent(getApplicationContext(), FinalPaymentActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -48,6 +49,7 @@ public class PaymentOptionActivity extends Activity
             {
                 Intent i = new Intent(getApplicationContext(), FinalPaymentActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -57,6 +59,7 @@ public class PaymentOptionActivity extends Activity
             {
                 Intent i = new Intent(getApplicationContext(), FinalPaymentActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -66,6 +69,7 @@ public class PaymentOptionActivity extends Activity
             {
                 Intent i = new Intent(getApplicationContext(), FinalPaymentActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -75,6 +79,7 @@ public class PaymentOptionActivity extends Activity
             {
                 Intent i = new Intent(getApplicationContext(), FinalPaymentActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }
