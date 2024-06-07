@@ -11,9 +11,8 @@
 
     <TextView
         android:text="Change Admin"
-        android:gravity="center"
-        android:textSize="45dp"
-        android:layout_marginTop="10dp"
+        android:gravity="center|bottom"
+        android:textSize="35dp"
         android:textStyle="bold"
         android:textColor="#3C707C"
         android:layout_width="match_parent"
@@ -33,7 +32,7 @@
         android:layout_marginTop="40dp"
         android:paddingTop="50dp"
         android:paddingBottom="50dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="150dp"
         app:cardElevation="15dp">
 
         <LinearLayout
@@ -45,8 +44,17 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical"
-            android:weightSum="3"
+            android:weightSum="5.5"
             >
+
+            <ImageView
+                android:src="@drawable/change_admin"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="40dp"
+                android:layout_weight="2.5"
+                ></ImageView>
+
             <EditText
                 android:id="@+id/etAdminUser"
                 android:hint="Username"
@@ -55,7 +63,7 @@
                 android:textColorHint="#3C707C"
                 android:layout_gravity="bottom"
                 android:background="@drawable/edittext1"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -71,8 +79,8 @@
                 android:textColor="#164863"
                 android:textColorHint="#3C707C"
                 android:background="@drawable/edittext1"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="55dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
@@ -83,7 +91,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
+                android:paddingBottom="15dp"
                 android:layout_weight="1.5"
                 android:orientation="horizontal"
                 android:weightSum="2"
@@ -98,7 +107,7 @@
                     android:gravity="center"
                     android:layout_gravity="top"
                     android:layout_marginRight="10dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="20dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -112,7 +121,7 @@
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom ="30dp"
+                    android:layout_marginBottom ="10dp"
                     android:layout_marginRight="20dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
