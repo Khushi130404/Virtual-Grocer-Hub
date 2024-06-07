@@ -2,6 +2,7 @@ package com.example.virtualgrocerhub;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,11 +27,20 @@ public class FinalPaymentActivity extends Activity
 {
     DatabaseReference dbRef;
     ShopGroceryActivity shop;
+    ImageView imgPayGif;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_payment);
+
+        imgPayGif = findViewById(R.id.imgPayGif);
+
+        Glide.with(this)
+                .asGif()
+                .load(R.raw.pay1)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(imgPayGif);
 
         dbRef = FirebaseDatabase.getInstance().getReference("Grocery");
         shop = new ShopGroceryActivity();
