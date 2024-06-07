@@ -62,9 +62,9 @@ public class CheckoutAdapter extends ArrayAdapter
                         CheckoutActivity check = new CheckoutActivity();
                         check.amount = Integer.parseInt(shop.tvAmount.getText().toString())-(qty.get(i)*bill.get(position).getRate());
                         shop.tvAmount.setText(""+check.amount);
-                        check.tvAmount.setText("Amount : "+check.amount);
-                        check.tvTax.setText("Tax : "+(int)(0.18*check.amount));
-                        check.tvFinalBill.setText("Final Bill : "+(int)(1.18*check.amount));
+                        check.tvAmount.setText("Amount : ₹"+check.amount);
+                        check.tvTax.setText("Tax : ₹"+(int)(0.18*check.amount));
+                        check.tvFinalBill.setText("Final Bill : ₹"+(int)(1.18*check.amount));
                         qty.set(i,0);
                         shop.ad.notifyDataSetChanged();
                         break;

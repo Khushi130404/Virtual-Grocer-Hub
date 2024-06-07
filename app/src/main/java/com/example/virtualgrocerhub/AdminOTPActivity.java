@@ -10,6 +10,7 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -23,6 +24,7 @@ public class AdminOTPActivity extends Activity
     int etId[] = {R.id.et1,R.id.et2,R.id.et3,R.id.et4};
     Random random;
     SharedPreferences share;
+    TextView tvPhone;
     String phone;
 
     @Override
@@ -33,9 +35,13 @@ public class AdminOTPActivity extends Activity
 
         int otp = getIntent().getIntExtra("otp",0000);
         btVerify = findViewById(R.id.btVerify);
+        tvPhone = findViewById(R.id.tvPhone);
         btSendAgain = findViewById(R.id.btSendAgain);
         share = getSharedPreferences("adminReg",MODE_PRIVATE);
         phone = share.getString("phone","0");
+
+
+        tvPhone.setText("+91 "+phone);
 
         et = new EditText[4];
         random = new Random();
