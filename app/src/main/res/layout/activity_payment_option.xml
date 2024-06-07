@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:orientation="vertical"
     android:weightSum="9.9"
-    android:background="@drawable/otp"
+    android:background="#FFFFFF"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PaymentOptionActivity">
@@ -19,20 +19,18 @@
         android:textColor="#164863"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         ></TextView>
 
     <ImageView
+        android:id="@+id/imgPayMethod"
         android:src="@drawable/card"
         android:backgroundTintMode="screen"
         android:focusable="false"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="2.2"
         ></ImageView>
 
     <LinearLayout
@@ -40,8 +38,7 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:weightSum="6"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
+        android:background="@drawable/otp"
         android:layout_weight="6"
         >
         <TextView
@@ -49,6 +46,8 @@
             android:gravity="center|start"
             android:textSize="18dp"
             android:textColor="#164863"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -60,6 +59,8 @@
             android:layout_height="0dp"
             android:background="@drawable/payment_method_box"
             android:layout_weight="1"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:weightSum="5"
@@ -96,6 +97,8 @@
             android:layout_weight="1"
             android:background="@drawable/payment_method_box"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginBottom="10dp"
             android:weightSum="5"
             android:orientation="horizontal"
@@ -129,6 +132,8 @@
             android:layout_weight="1"
             android:background="@drawable/payment_method_box"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginBottom="10dp"
             android:weightSum="5"
             android:orientation="horizontal"
@@ -162,6 +167,8 @@
             android:layout_weight="1"
             android:background="@drawable/payment_method_box"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginBottom="10dp"
             android:weightSum="5"
             android:orientation="horizontal"
@@ -195,7 +202,9 @@
             android:layout_weight="1"
             android:background="@drawable/payment_method_box"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="30dp"
             android:weightSum="5"
             android:orientation="horizontal"
             >
@@ -226,7 +235,6 @@
     <TextView
         android:id="@+id/tvAmount"
         android:text="Amount Payable  :  ₹"
-        android:layout_marginTop="20dp"
         android:gravity="center"
         android:paddingRight="20dp"
         android:textSize="20dp"

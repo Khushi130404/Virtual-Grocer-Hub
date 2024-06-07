@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,10 +14,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+
 public class PaymentOptionActivity extends Activity
 {
     TextView tvAmount;
     LinearLayout llDebit, llGpay, llNet, llPhone, llCash;
+    ImageView imgPayMethod;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -31,6 +36,13 @@ public class PaymentOptionActivity extends Activity
         llCash = findViewById(R.id.llCash);
         llPhone = findViewById(R.id.llPhone);
         llNet = findViewById(R.id.llNet);
+        imgPayMethod = findViewById(R.id.imgPayMethod);
+
+        Glide.with(this)
+                .asGif()
+                .load(R.raw.pay2)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(imgPayMethod);
 
         llDebit.setOnClickListener(new View.OnClickListener()
         {
