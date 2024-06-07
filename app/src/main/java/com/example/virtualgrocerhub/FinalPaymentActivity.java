@@ -34,6 +34,8 @@ public class FinalPaymentActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_payment);
 
+        aaa
+
         imgPayGif = findViewById(R.id.imgPayGif);
 
         Glide.with(this)
