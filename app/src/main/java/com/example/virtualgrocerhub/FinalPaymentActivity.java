@@ -16,12 +16,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -71,6 +75,8 @@ public class FinalPaymentActivity extends Activity
                         else
                         {
                             snapshot.getRef().removeValue();
+                            StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(gc.getImage());
+                            storeRef.delete();
                             shop.ad.notifyDataSetChanged();
                         }
 
