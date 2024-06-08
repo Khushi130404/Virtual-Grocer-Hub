@@ -2,6 +2,8 @@ package com.example.virtualgrocerhub;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -28,15 +30,15 @@ public class FinalPaymentActivity extends Activity
     DatabaseReference dbRef;
     ShopGroceryActivity shop;
     ImageView imgPayGif;
+    Button btShopping;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_payment);
 
-        aaa
-
         imgPayGif = findViewById(R.id.imgPayGif);
+        btShopping = findViewById(R.id.btShopping);
 
         Glide.with(this)
                 .asGif()
@@ -86,6 +88,13 @@ public class FinalPaymentActivity extends Activity
                 public void onCancelled(@NonNull DatabaseError error)
                 {
                     Toast.makeText(getApplicationContext(), "Error : "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            btShopping.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
                 }
             });
         }
