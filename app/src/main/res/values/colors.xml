@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="custom_highlight_color">#CCF0EE</color>
+    <color name="your_custom_divider_color">#76ABAE</color>
+    <color name="your_custom_color">#285C68</color>
 </resources>

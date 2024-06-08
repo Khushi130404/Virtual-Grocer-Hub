@@ -116,7 +116,7 @@ public class ShopperAddressActivity extends Activity implements LocationListener
         }
         catch(Exception e)
         {
-            Toast.makeText(getApplicationContext(),"err : "+e.getMessage(),Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"err : "+e.getMessage(),Toast.LENGTH_LONG).show();
         }
 
         rbCurret.setOnClickListener(new View.OnClickListener()
