@@ -91,9 +91,11 @@ public class FinalPaymentActivity extends Activity
                 }
             });
 
-            btShopping.setOnClickListener(new View.OnClickListener() {
+            btShopping.setOnClickListener(new View.OnClickListener()
+            {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v)
+                {
                     finish();
                 }
             });

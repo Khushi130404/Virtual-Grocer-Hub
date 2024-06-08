@@ -13,30 +13,75 @@
 
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="4"
         ></ImageView>
 
     <LinearLayout
+        android:id="@+id/llHome"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:background="#CCF0EE"
-        android:paddingEnd="40dp"
-        android:paddingStart="40dp"
-        android:paddingBottom="35dp"
+        android:orientation="vertical"
+        android:background="@drawable/home_box"
+        android:paddingBottom="28dp"
         android:paddingTop="35dp"
-        android:layout_weight="1"
-        android:weightSum="2"
+        android:layout_weight="2"
+        android:weightSum="4"
         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:weightSum="2"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:gravity="center|end"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Welcome to "
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></TextView>
+
+            <TextView
+                android:gravity="center|start"
+                android:textSize="26dp"
+                android:textColor="#3C707C"
+                android:textStyle="bold"
+                android:text="VirtualGrocer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:textSize="13dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="17dp"
+            android:text="We're excited to have you on board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></TextView>
 
         <Button
             android:id="@+id/btAdmin"
             android:text="Admin"
             android:textSize="17dp"
             android:textColor="@color/white"
-            android:layout_width="0dp"
-            android:layout_marginRight="15dp"
-            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/button4"
             ></Button>
@@ -46,13 +91,15 @@
             android:text="Shopper"
             android:textSize="17dp"
             android:textColor="@color/white"
-            android:layout_marginLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/button4"
             ></Button>
-
 
     </LinearLayout>
 
