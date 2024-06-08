@@ -10,12 +10,13 @@
     android:layout_height="match_parent"
     tools:context=".ShopperAddressActivity">
 
+
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2" />
+        android:layout_weight="2.1" />
 
     <TextView
         android:text="Current Address"
@@ -23,10 +24,11 @@
         android:textSize="18dp"
         android:textColor="#164863"
         android:textStyle="bold"
+        android:layout_marginTop="20dp"
         android:paddingBottom="2dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.4"
         ></TextView>
 
     <LinearLayout
@@ -34,7 +36,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:weightSum="4"
-        android:layout_weight="1.55"
+        android:layout_weight="1.5"
         >
 
         <RadioButton
@@ -78,7 +80,7 @@
         android:paddingBottom="2dp"
         android:textColor="#164863"
         android:textStyle="bold"
-        android:layout_weight="0.5"
+        android:layout_weight="0.4"
         ></TextView>
 
     <LinearLayout
@@ -86,7 +88,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:weightSum="4"
-        android:layout_weight="1.55"
+        android:layout_weight="1.5"
         >
 
         <RadioButton
@@ -123,16 +125,16 @@
     <Button
         android:id="@+id/btProceed"
         android:text="Proceed"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button3"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4"
+        android:layout_weight="0.3"
         ></Button>
 
 </LinearLayout>
