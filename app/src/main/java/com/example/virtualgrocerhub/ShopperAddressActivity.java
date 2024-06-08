@@ -1,6 +1,5 @@
 package com.example.virtualgrocerhub;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -11,23 +10,24 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentActivity;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 import java.util.Locale;
 
-public class ShopperAddressActivity extends Activity implements LocationListener
+public class ShopperAddressActivity extends FragmentActivity implements LocationListener, OnMapReadyCallback
 {
     RadioButton rbCurret, rbOther;
     EditText etCurrent, etOther;
@@ -39,6 +39,7 @@ public class ShopperAddressActivity extends Activity implements LocationListener
     double latitude = 0, longitude = 0;
     Geocoder geo;
     Address addr;
+    private static GoogleMap mMap;
     private static ShopperAddressActivity instance;
 
     @Override
@@ -52,11 +53,11 @@ public class ShopperAddressActivity extends Activity implements LocationListener
         etOther = findViewById(R.id.etOther);
         btProceed = findViewById(R.id.btProceed);
 
+        instance = this;
+
         man = (LocationManager) getSystemService(LOCATION_SERVICE);
         isNet = man.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         isGps = man.isProviderEnabled(LocationManager.GPS_PROVIDER);
-
-        instance = this;
 
         if (isNet || isGps)
         {
@@ -116,7 +117,7 @@ public class ShopperAddressActivity extends Activity implements LocationListener
         }
         catch(Exception e)
         {
-            //Toast.makeText(getApplicationContext(),"err : "+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"err : "+e.getMessage(),Toast.LENGTH_LONG).show();
         }
 
         rbCurret.setOnClickListener(new View.OnClickListener()
@@ -179,6 +180,36 @@ public class ShopperAddressActivity extends Activity implements LocationListener
             }
         });
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+
+        if (mapFragment != null)
+        {
+            mapFragment.getMapAsync(this);
+        }
+    }
+
+    @Override
+    public void onLocationChanged(@NonNull Location location)
+    {
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
+        if (mMap != null)
+        {
+            LatLng newLocation = new LatLng(latitude, longitude);
+            mMap.clear();
+            mMap.addMarker(new MarkerOptions().position(newLocation).title("Current Location"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newLocation, 19f));
+        }
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap)
+    {
+        mMap = googleMap;
+        LatLng location = new LatLng(latitude, longitude);
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 19f));
     }
 
     public static void finishActivity()
@@ -188,7 +219,4 @@ public class ShopperAddressActivity extends Activity implements LocationListener
         }
     }
 
-    @Override
-    public void onLocationChanged(@NonNull Location location)
-    {}
 }
