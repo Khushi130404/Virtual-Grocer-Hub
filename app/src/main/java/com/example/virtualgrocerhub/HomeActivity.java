@@ -24,7 +24,7 @@ public class HomeActivity extends Activity
         btShopper = findViewById(R.id.btShopper);
         llHome = findViewById(R.id.llHome);
 
-        Animation translateAnimation = AnimationUtils.loadAnimation(this, R.anim.translate);
+        Animation translateAnimation = AnimationUtils.loadAnimation(this, R.anim.home_anim);
         llHome.startAnimation(translateAnimation);
         btAdmin.setOnClickListener(new View.OnClickListener()
         {
