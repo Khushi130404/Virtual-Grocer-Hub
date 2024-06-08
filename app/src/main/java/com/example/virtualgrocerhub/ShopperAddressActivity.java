@@ -3,31 +3,41 @@ package com.example.virtualgrocerhub;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
+import androidx.appcompat.app.AppCompatActivity;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 
-public class ShopperAddressActivity extends Activity implements LocationListener
+public class ShopperAddressActivity extends FragmentActivity implements LocationListener, OnMapReadyCallback
 {
     RadioButton rbCurret, rbOther;
     EditText etCurrent, etOther;
@@ -39,7 +49,8 @@ public class ShopperAddressActivity extends Activity implements LocationListener
     double latitude = 0, longitude = 0;
     Geocoder geo;
     Address addr;
-    private static ShopperAddressActivity instance;
+    //ImageView imgMap;
+    private static GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +62,11 @@ public class ShopperAddressActivity extends Activity implements LocationListener
         etCurrent = findViewById(R.id.etCurrent);
         etOther = findViewById(R.id.etOther);
         btProceed = findViewById(R.id.btProceed);
+        //imgMap = findViewById(R.id.imgMap);
 
         man = (LocationManager) getSystemService(LOCATION_SERVICE);
         isNet = man.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         isGps = man.isProviderEnabled(LocationManager.GPS_PROVIDER);
-
-        instance = this;
 
         if (isNet || isGps)
         {
@@ -116,7 +126,7 @@ public class ShopperAddressActivity extends Activity implements LocationListener
         }
         catch(Exception e)
         {
-            //Toast.makeText(getApplicationContext(),"err : "+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"err : "+e.getMessage(),Toast.LENGTH_LONG).show();
         }
 
         rbCurret.setOnClickListener(new View.OnClickListener()
@@ -179,16 +189,41 @@ public class ShopperAddressActivity extends Activity implements LocationListener
             }
         });
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+
+        if (mapFragment != null)
+        {
+            mapFragment.getMapAsync(this);
+        }
     }
 
     public static void finishActivity()
+    {}
+
+    @Override
+    public void onLocationChanged(@NonNull Location location)
     {
-        if(instance!=null) {
-            instance.finish();
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
+        Toast.makeText(this, "Latitude: " + latitude + ", Longitude: " + longitude, Toast.LENGTH_LONG).show();
+
+        if (mMap != null)
+        {
+            LatLng newLocation = new LatLng(latitude, longitude);
+            mMap.clear();
+            mMap.addMarker(new MarkerOptions().position(newLocation).title("Current Location"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newLocation, 1f)); // 15f is the zoom level
         }
     }
 
     @Override
-    public void onLocationChanged(@NonNull Location location)
-    {}
+    public void onMapReady(@NonNull GoogleMap googleMap)
+    {
+        mMap = googleMap;
+        LatLng location = new LatLng(latitude, longitude);
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 20f));
+        //Toast.makeText(getApplicationContext(),"Map : "+latitude,Toast.LENGTH_LONG).show();
+    }
 }

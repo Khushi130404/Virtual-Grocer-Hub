@@ -25,6 +25,7 @@
         >
 
         <ImageView
+            android:id="@+id/imgCart"
             android:src="@drawable/shopping_cart"
             android:layout_width="0dp"
             android:padding="10dp"
