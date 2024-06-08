@@ -7,8 +7,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ChangeAdminActivity extends Activity
@@ -16,6 +19,8 @@ public class ChangeAdminActivity extends Activity
     EditText etAdminPass,etAdminUser;
     Button btAdminChange,btAdminCancel;
     SharedPreferences share;
+    androidx.cardview.widget.CardView cardChangeAdmin;
+    TextView tvChangeAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,6 +32,14 @@ public class ChangeAdminActivity extends Activity
         etAdminPass = findViewById(R.id.etAdminPass);
         btAdminChange = findViewById(R.id.btChangeAdmin);
         btAdminCancel = findViewById(R.id.btCancelAdmin);
+        cardChangeAdmin = findViewById(R.id.cardChangeAdmin);
+        tvChangeAdmin = findViewById(R.id.tvChangeAdmin);
+
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.admin_anim);
+        cardChangeAdmin.startAnimation(fadeIn);
+
+        Animation textDown = AnimationUtils.loadAnimation(this, R.anim.admin_text_amin);
+        tvChangeAdmin.startAnimation(textDown);
 
         share = getSharedPreferences("admin", Context.MODE_PRIVATE);
 

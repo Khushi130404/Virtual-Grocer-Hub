@@ -1,7 +1,5 @@
 package com.example.virtualgrocerhub;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -34,7 +32,7 @@ public class AdminLoginActivity extends Activity
         btCancel = findViewById(R.id.btCancel);
         cardLogin = findViewById(R.id.cardLogin);
 
-        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.login_anim);
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.admin_anim);
         cardLogin.startAnimation(fadeIn);
 
         share = getSharedPreferences("admin", Context.MODE_PRIVATE);

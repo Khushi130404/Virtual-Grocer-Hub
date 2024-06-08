@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -20,6 +22,7 @@ public class AdminActivity extends Activity {
     Random random;
     String phone;
     SharedPreferences share;
+    androidx.cardview.widget.CardView cardAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +33,12 @@ public class AdminActivity extends Activity {
         btDelete = findViewById(R.id.btDelete);
         btShow = findViewById(R.id.btShow);
         btAdmin = findViewById(R.id.btAdmin);
+        cardAdmin = findViewById(R.id.cardAdmin);
 
         random = new Random();
 
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.admin_anim);
+        cardAdmin.startAnimation(fadeIn);
 
         btAdd.setOnClickListener(new View.OnClickListener() {
             @Override

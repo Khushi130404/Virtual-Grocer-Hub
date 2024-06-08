@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ public class AdminOTPActivity extends Activity
     SharedPreferences share;
     TextView tvPhone;
     String phone;
+    androidx.cardview.widget.CardView cardOTP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,9 +40,14 @@ public class AdminOTPActivity extends Activity
         btVerify = findViewById(R.id.btVerify);
         tvPhone = findViewById(R.id.tvPhone);
         btSendAgain = findViewById(R.id.btSendAgain);
+        cardOTP = findViewById(R.id.cardOTP);
+
+
         share = getSharedPreferences("adminReg",MODE_PRIVATE);
         phone = share.getString("phone","0");
 
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.admin_anim);
+        cardOTP.startAnimation(fadeIn);
 
         tvPhone.setText("+91 "+phone);
 
