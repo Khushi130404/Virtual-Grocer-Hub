@@ -7,6 +7,7 @@
         <item name="colorControlHighlight">@color/custom_highlight_color</item>
         <item name="android:listDivider">@color/your_custom_divider_color</item>
         <item name="android:navigationBarColor">@color/your_custom_color</item>
+        <item name="android:windowBackground">@drawable/launch_screen_background</item>
     </style>
     <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
