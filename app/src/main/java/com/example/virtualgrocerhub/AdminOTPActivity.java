@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +30,7 @@ public class AdminOTPActivity extends Activity
     SharedPreferences share;
     TextView tvPhone;
     String phone;
+    androidx.cardview.widget.CardView cardOTP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,9 +42,13 @@ public class AdminOTPActivity extends Activity
         btVerify = findViewById(R.id.btVerify);
         tvPhone = findViewById(R.id.tvPhone);
         btSendAgain = findViewById(R.id.btSendAgain);
+        cardOTP = findViewById(R.id.cardOTP);
+
         share = getSharedPreferences("adminReg",MODE_PRIVATE);
         phone = share.getString("phone","0");
 
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.admin_anim);
+        cardOTP.startAnimation(fadeIn);
 
         tvPhone.setText("+91 "+phone);
 
@@ -49,7 +58,13 @@ public class AdminOTPActivity extends Activity
         for(int i=0; i<etId.length; i++)
         {
             et[i] = findViewById(etId[i]);
+            if(i!=0)
+            {
+                setupOtpEditText(et[i-1], et[i]);
+            }
         }
+
+        setupOtpEditText(et[etId.length-1], null);
 
         btSendAgain.setOnClickListener(new View.OnClickListener()
         {
@@ -94,6 +109,33 @@ public class AdminOTPActivity extends Activity
                 {
                     Toast.makeText(getApplicationContext(), "Incorrect OTP...!", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+
+    private void setupOtpEditText(final EditText currentEditText, final EditText nextEditText)
+    {
+        currentEditText.addTextChangedListener(new TextWatcher()
+        {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                if (s.length() == 1 && nextEditText != null)
+                {
+                    nextEditText.requestFocus();
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {
+                // No action needed before text is changed
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                // No action needed after text is changed
             }
         });
     }

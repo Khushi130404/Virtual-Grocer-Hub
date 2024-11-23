@@ -1,13 +1,14 @@
 package com.example.virtualgrocerhub;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.example.virtualgrocerhub.R;
 
 public class ShopGroceryActivity extends Activity
 {
@@ -33,6 +35,7 @@ public class ShopGroceryActivity extends Activity
     static List<ItemBill> bill;
     static boolean visit = false;
     Button btCheckout;
+    ImageView imgCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,11 +46,15 @@ public class ShopGroceryActivity extends Activity
         lvGrocery = findViewById(R.id.lvGrocery);
         tvAmount = findViewById(R.id.tvAmount);
         btCheckout = findViewById(R.id.btCheckout);
+        imgCart = findViewById(R.id.imgCart);
 
         grocery = new ArrayList<Grocery>();
         bill = new ArrayList<>();
         qty = new ArrayList<>();
         dbRef = FirebaseDatabase.getInstance().getReference("Grocery");
+
+        Animation osc = AnimationUtils.loadAnimation(this, R.anim.cart_anim);
+        imgCart.startAnimation(osc);
 
         dbRef.addValueEventListener(new ValueEventListener()
         {

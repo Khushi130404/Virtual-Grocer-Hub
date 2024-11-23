@@ -13,55 +13,83 @@
         android:id="@+id/lvGrocery"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4.5"
+        android:layout_weight="4.4"
         ></ListView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_weight="0.2"
+        android:layout_weight="0.6"
         >
 
-        <TextView
-            android:text="Total  :  ₹"
-            android:gravity="center|end"
-            android:textSize="20dp"
+        <ImageView
+            android:id="@+id/imgCart"
+            android:src="@drawable/shopping_cart"
             android:layout_width="0dp"
-            android:textColor="#04364A"
+            android:padding="10dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.4"
-            ></TextView>
+            android:layout_weight="1"
+            ></ImageView>
 
-        <TextView
-            android:id="@+id/tvAmount"
-            android:text="0"
-            android:gravity="center|start"
-            android:textSize="20dp"
+        <LinearLayout
             android:layout_width="0dp"
-            android:textColor="#04364A"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:weightSum="0.5"
+            android:layout_marginBottom="10dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            ></TextView>
+            android:layout_weight="2"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_weight="0.2"
+                >
+
+                <TextView
+                    android:text="Total  :  ₹"
+                    android:gravity="center|end"
+                    android:textSize="20dp"
+                    android:layout_width="0dp"
+                    android:textColor="#04364A"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    ></TextView>
+
+                <TextView
+                    android:id="@+id/tvAmount"
+                    android:text="0"
+                    android:gravity="center|start"
+                    android:textSize="20dp"
+                    android:layout_width="0dp"
+                    android:textColor="#04364A"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btCheckout"
+                android:text="Check out"
+                android:textColor="@color/white"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="30dp"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                ></Button>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btCheckout"
-        android:text="Check out"
-        android:textColor="@color/white"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
-        android:textSize="17dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        ></Button>
-
 
 </LinearLayout>

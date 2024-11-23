@@ -13,7 +13,7 @@
     <TextView
         android:text="Payment  Successful"
         android:textStyle="bold"
-        android:textColor="#76ABAE"
+        android:textColor="#164863"
         android:gravity="center|bottom"
         android:textSize="30dp"
         android:layout_width="match_parent"
@@ -29,5 +29,28 @@
         android:foregroundGravity="top"
         android:layout_weight="4"
         ></ImageView>
+
+    <TextView
+        android:textSize="20dp"
+        android:textColor="#76ABAE"
+        android:gravity="center|top"
+        android:text="Your order is successfully placed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></TextView>
+
+    <Button
+        android:id="@+id/btShopping"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:text="Back to shopping"
+        android:textColor="@color/white"
+        android:background="@drawable/button3"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.65"
+        ></Button>
 
 </LinearLayout>

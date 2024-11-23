@@ -10,9 +10,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,7 +33,7 @@ public class AddGroceryActivity extends Activity {
     EditText etAddName,etAddUnit,etAddPrice,etAddQty;
     Button btAddImage,btAddGrocery,btAddCancel;
     ImageView imgAdd;
-
+    TextView tvAdd;
     String addName,addUnit,addImage;
     Integer addPrice,addQty;
     StorageReference store=null,getStore=null;
@@ -50,6 +53,11 @@ public class AddGroceryActivity extends Activity {
         btAddCancel = findViewById(R.id.btAddCancel);
         btAddImage = findViewById(R.id.btAddImage);
         imgAdd = findViewById(R.id.imgAdd);
+        tvAdd = findViewById(R.id.tvAdd);
+
+        Animation slideLeft = AnimationUtils.loadAnimation(this, R.anim.admin_add_anim);
+        tvAdd.startAnimation(slideLeft);
+
 
         btAddImage.setOnClickListener(new View.OnClickListener() {
             @Override

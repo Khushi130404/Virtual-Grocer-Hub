@@ -10,6 +10,7 @@
     tools:context=".ChangeAdminActivity">
 
     <TextView
+        android:id="@+id/tvChangeAdmin"
         android:text="Change Admin"
         android:gravity="center|bottom"
         android:textSize="35dp"
@@ -21,6 +22,7 @@
         ></TextView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardChangeAdmin"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
@@ -44,15 +46,16 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical"
-            android:weightSum="5.5"
+            android:weightSum="5.8"
             >
 
             <ImageView
                 android:src="@drawable/change_admin"
                 android:layout_width="match_parent"
+                android:paddingLeft="20dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="40dp"
-                android:layout_weight="2.5"
+                android:layout_marginTop="20dp"
+                android:layout_weight="2.8"
                 ></ImageView>
 
             <EditText
@@ -63,8 +66,8 @@
                 android:textColorHint="#3C707C"
                 android:layout_gravity="bottom"
                 android:background="@drawable/edittext1"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
@@ -79,8 +82,8 @@
                 android:textColor="#164863"
                 android:textColorHint="#3C707C"
                 android:background="@drawable/edittext1"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="35dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
@@ -92,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="20dp"
-                android:paddingBottom="15dp"
+                android:paddingBottom="18dp"
                 android:layout_weight="1.5"
                 android:orientation="horizontal"
                 android:weightSum="2"
