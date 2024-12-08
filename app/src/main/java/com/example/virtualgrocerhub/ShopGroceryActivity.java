@@ -1,10 +1,14 @@
 package com.example.virtualgrocerhub;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,16 +22,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.example.virtualgrocerhub.R;
 
 public class ShopGroceryActivity extends Activity
 {
     ListView lvGrocery;
-    TextView tvAmount;
-    ShopGroceryAdapter ad;
-    List<Grocery> grocery;
+    static TextView tvAmount;
+    static ShopGroceryAdapter ad;
+    static List<Grocery> grocery;
     DatabaseReference dbRef;
-    List<Integer> qty;
-    boolean visit = false;
+    static List<Integer> qty;
+    static List<ItemBill> bill;
+    static boolean visit = false;
+    Button btCheckout;
+    ImageView imgCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,10 +45,16 @@ public class ShopGroceryActivity extends Activity
 
         lvGrocery = findViewById(R.id.lvGrocery);
         tvAmount = findViewById(R.id.tvAmount);
+        btCheckout = findViewById(R.id.btCheckout);
+        imgCart = findViewById(R.id.imgCart);
 
         grocery = new ArrayList<Grocery>();
+        bill = new ArrayList<>();
         qty = new ArrayList<>();
         dbRef = FirebaseDatabase.getInstance().getReference("Grocery");
+
+        Animation osc = AnimationUtils.loadAnimation(this, R.anim.cart_anim);
+        imgCart.startAnimation(osc);
 
         dbRef.addValueEventListener(new ValueEventListener()
         {
@@ -48,6 +62,7 @@ public class ShopGroceryActivity extends Activity
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
                 grocery.clear();
+
                 for(DataSnapshot snap : snapshot.getChildren())
                 {
                     Grocery gc = snap.getValue(Grocery.class);
@@ -60,7 +75,7 @@ public class ShopGroceryActivity extends Activity
                 visit = true;
                 if(!grocery.isEmpty())
                 {
-                    ad = new ShopGroceryAdapter(ShopGroceryActivity.this,R.layout.shop_grocery_adepter,grocery,tvAmount,qty);
+                    ad = new ShopGroceryAdapter(ShopGroceryActivity.this,R.layout.shop_grocery_adepter,grocery,tvAmount,qty,bill);
                     lvGrocery.setAdapter(ad);
                 }
                 else
@@ -75,5 +90,30 @@ public class ShopGroceryActivity extends Activity
                 Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
+
+        btCheckout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(!tvAmount.getText().toString().equals("0"))
+                {
+                    Intent i = new Intent(getApplicationContext(), CheckoutActivity.class);
+                    i.putExtra("amount",tvAmount.getText().toString());
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "No item selected...!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        visit = false;
     }
 }

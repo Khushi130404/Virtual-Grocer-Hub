@@ -1,13 +1,13 @@
 package com.example.virtualgrocerhub;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +16,7 @@ public class AdminLoginActivity extends Activity
 {
     EditText etUser,etPass;
     Button btLogin,btCancel;
+    androidx.cardview.widget.CardView cardLogin;
     public String user,pass;
     SharedPreferences share;
 
@@ -29,6 +30,10 @@ public class AdminLoginActivity extends Activity
         etUser = findViewById(R.id.etUser);
         btLogin = findViewById(R.id.btLogin);
         btCancel = findViewById(R.id.btCancel);
+        cardLogin = findViewById(R.id.cardLogin);
+
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.admin_anim);
+        cardLogin.startAnimation(fadeIn);
 
         share = getSharedPreferences("admin", Context.MODE_PRIVATE);
         user = share.getString("username","admin");
@@ -42,7 +47,7 @@ public class AdminLoginActivity extends Activity
                 {
                     if(etPass.getText().toString().equals(pass))
                     {
-                        Intent i = new Intent(getApplicationContext(), AdminActivity.class);
+                        Intent i = new Intent(getApplicationContext(), AdminRegistrationActivity.class);
                         startActivity(i);
                         finish();
                     }

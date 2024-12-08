@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:weightSum="9.9"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentOptionActivity">
+
+    <TextView
+        android:text="Payment Methods"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:textColor="#164863"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        ></TextView>
+
+    <ImageView
+        android:id="@+id/imgPayMethod"
+        android:src="@drawable/card"
+        android:backgroundTintMode="screen"
+        android:focusable="false"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.2"
+        ></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="6"
+        android:background="@drawable/otp"
+        android:layout_weight="6"
+        >
+        <TextView
+            android:text="Choose Payment option"
+            android:gravity="center|start"
+            android:textSize="18dp"
+            android:textColor="#164863"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></TextView>
+
+        <LinearLayout
+            android:id="@+id/llDebit"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/payment_method_box"
+            android:layout_weight="1"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="17dp"
+                android:paddingBottom="3dp"
+                android:src="@drawable/credit"
+                android:layout_width="0dp"
+                android:paddingLeft="3dp"
+                android:layout_marginLeft="20dp"
+                android:paddingRight="3dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:text="Credit / Debit Card"
+                android:gravity="center|start"
+                android:textColor="#3C707C"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llGpay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/payment_method_box"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="10dp"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:src="@drawable/gpay"
+                android:layout_marginLeft="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="Google Pay"
+                android:layout_marginLeft="20dp"
+                android:gravity="center|start"
+                android:textColor="#3C707C"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNet"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/payment_method_box"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="10dp"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:src="@drawable/netbank"
+                android:layout_width="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="Net Banking"
+                android:layout_marginLeft="20dp"
+                android:gravity="center|start"
+                android:textColor="#3C707C"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPhone"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/payment_method_box"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="10dp"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:src="@drawable/phonepe"
+                android:layout_width="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="PhonePe"
+                android:layout_marginLeft="20dp"
+                android:gravity="center|start"
+                android:textColor="#3C707C"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCash"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/payment_method_box"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="30dp"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:src="@drawable/cash"
+                android:layout_marginLeft="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></ImageView>
+
+            <TextView
+                android:text="Cash on Delivery"
+                android:layout_marginLeft="20dp"
+                android:gravity="center|start"
+                android:textColor="#3C707C"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                ></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:text="Amount Payable  :  ₹"
+        android:gravity="center"
+        android:paddingRight="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/pay_box"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        ></TextView>
+
+
+</LinearLayout>

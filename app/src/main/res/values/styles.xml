@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#3C707C</item>
+        <item name="colorPrimaryDark">#76ABAE</item>
+        <item name="colorAccent">#164863</item>
+        <item name="colorControlHighlight">@color/custom_highlight_color</item>
+        <item name="android:listDivider">@color/your_custom_divider_color</item>
+        <item name="android:navigationBarColor">@color/your_custom_color</item>
+        <item name="android:windowBackground">@drawable/launch_screen_background</item>
+    </style>
+    <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>
