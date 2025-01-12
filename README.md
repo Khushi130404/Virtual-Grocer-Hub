@@ -12,3 +12,10 @@ Virtual Grocer Hub is an Android application developed in Java using Android Stu
 
 - Local Storage: User device storage
 
+## 📋 Project Structure
+
+The application is divided into two main modules:
+- Admin Module
+
+- User Module
+
