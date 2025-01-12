@@ -15,30 +15,53 @@ Virtual Grocer Hub is an Android application developed in Java using Android Stu
 ## 📋 Project Structure
 
 The application is divided into two main modules:
-- Admin Module
-
-- User Module
+### 1. Admin Module
+### 2. User Module
 
 ## 🛠️ Admin Module
 
 The Admin module allows the administrator to manage the grocery inventory efficiently. The key features include :
 
-- View a list of groceries with details such as :
+1. View a list of groceries with details such as :
   - Name
   - Image
   - Quantity
   - Price
   - Unit
     
-- Add new grocery items to the list.
+2. Add new grocery items to the list.
 
-- Update existing grocery item details.
+3. Update existing grocery item details.
 
-- Delete grocery items from the list.
+4. Delete grocery items from the list.
 
-- Change Admin Credentials:
+5. Change Admin Credentials :
   - The Admin can change the username and password.
   - For added security, a two-step verification process is implemented using SMS-based OTP (One-Time Password).
 
+
+## 👤 User Module
+
+The User module allows shoppers to browse, purchase, and manage grocery items easily. The key features include:
+
+1. Browse and Purchase Groceries :
+  - Users can select any quantity of grocery items and add them to their cart.
+
+2. Bill Display :
+  - A dynamic bill is displayed based on the selected items.
+  - Users can remove items from the bill before finalizing the purchase.
+
+3. Address Management :
+  - The app retrieves the user's current location using GPS.
+  - Users can view their address in satellite view.
+  - Users can manually enter their address if preferred.
+
+4. Payment Options :
+  - Multiple payment methods are supported, including:
+  - Google Pay (GPay)
+  - Net Banking
+  - Cash on Delivery (COD)
+  - PhonePe
+  - Credit/Debit Cards
 
 
