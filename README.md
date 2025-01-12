@@ -64,4 +64,15 @@ The User module allows shoppers to browse, purchase, and manage grocery items ea
   - PhonePe
   - Credit/Debit Cards
 
+## 🚀 How to Run the Project
+
+1. Clone the repository to your local machine.
+
+2. Open the project in Android Studio.
+
+3. Connect your Firebase account to the project.
+
+4. Build and run the application on an Android emulator or a physical device.
+
+
 
