@@ -19,3 +19,26 @@ The application is divided into two main modules:
 
 - User Module
 
+## 🛠️ Admin Module
+
+The Admin module allows the administrator to manage the grocery inventory efficiently. The key features include :
+
+- View a list of groceries with details such as :
+  - Name
+  - Image
+  - Quantity
+  - Price
+  - Unit
+    
+- Add new grocery items to the list.
+
+- Update existing grocery item details.
+
+- Delete grocery items from the list.
+
+- Change Admin Credentials:
+  - The Admin can change the username and password.
+  - For added security, a two-step verification process is implemented using SMS-based OTP (One-Time Password).
+
+
+
